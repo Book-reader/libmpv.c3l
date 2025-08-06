@@ -1,0 +1,17 @@
+{
+	"provides": "libmpv",
+	"targets": {
+		"linux-x64": {
+			"linked-libraries": ["mpv"],
+		},
+		"windows-x64": {
+			"linked-libraries": ["mpv"],
+		},
+		"macos-x64": {
+			"linked-libraries": ["mpv"],
+		},
+		"macos-aarch64": {
+			"linked-libraries": ["mpv"],
+		},
+	}
+}

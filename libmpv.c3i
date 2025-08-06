@@ -1,0 +1,3 @@
+module libmpv;
+
+// extern fn int some_library_function();
