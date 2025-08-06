@@ -1,91 +1,47 @@
 module mpv @private;
 
-// Wrapped, tested
 extern fn CULong mpv_client_api_version();
-// Wrapped
 extern fn ZString mpv_error_string(MpvError error);
-// Wrapped, tested
 extern fn void mpv_free(void* data);
-// Wrapped, tested
 extern fn ZString mpv_client_name(Mpv ctx);
-// Wrapped, tested
 extern fn long mpv_client_id(Mpv ctx);
-// Wrapped, tested
 extern fn Mpv mpv_create();
-// Wrapped, tested
 extern fn MpvError mpv_initialize(Mpv ctx);
-// Wrapped, tested
 extern fn void mpv_destroy(Mpv ctx);
-// Wrapped, tested
 extern fn void mpv_terminate_destroy(Mpv ctx);
-// Wrapped
 extern fn Mpv mpv_create_client(Mpv ctx, ZString name);
-// Wrapped
 extern fn Mpv mpv_create_weak_client(Mpv ctx, ZString name);
-// Wrapped
 extern fn MpvError mpv_load_config_file(Mpv ctx, ZString filename);
-// Wrapped
 extern fn long mpv_get_time_ns(Mpv ctx);
-// Wrapped
 extern fn long mpv_get_time_us(Mpv ctx);
-// Wrapped
 extern fn void mpv_free_node_contents(MpvNode* node);
-// Wrapped, tested
 extern fn MpvError mpv_set_option(Mpv ctx, ZString name, MpvFormat format, void* data);
-// Wrapped, tested
 extern fn MpvError mpv_set_option_string(Mpv ctx, ZString name, ZString data);
-// Wrapped, tested
 extern fn MpvError mpv_command(Mpv ctx, ZString* args);
-// Wrapped
 extern fn MpvError mpv_command_node(Mpv ctx, MpvNode* args, MpvNode* result);
-// Wrapped
 extern fn MpvError mpv_command_ret(Mpv ctx, ZString* args, MpvNode* result);
-// Wrapped
 extern fn MpvError mpv_command_string(Mpv ctx, ZString* args);
-// Wrapped
 extern fn MpvError mpv_command_async(Mpv ctx, MpvUserdata reply_userdata, ZString* args);
-// Wrapped
 extern fn MpvError mpv_command_node_async(Mpv ctx, MpvUserdata reply_userdata, MpvNode* args);
-// Wrapped
 extern fn void mpv_abort_async_command(Mpv ctx, MpvUserdata reply_userdata);
-// Wrapped, tested
 extern fn MpvError mpv_set_property(Mpv ctx, ZString name, MpvFormat format, void* data);
-// Wrapped
 extern fn MpvError mpv_set_property_string(Mpv ctx, ZString name, ZString data);
-// Wrapped
 extern fn MpvError mpv_del_property(Mpv ctx, ZString name);
-// Wrapped
 extern fn MpvError mpv_set_property_async(Mpv ctx, MpvUserdata reply_userdata, ZString name, MpvFormat format, void *data);
-// Wrapped, tested
 extern fn MpvError mpv_get_property(Mpv ctx, ZString name, MpvFormat format, void *data);
-// Wrapped, tested
 extern fn ZString mpv_get_property_string(Mpv ctx, ZString name);
-// Wrapped
 extern fn ZString mpv_get_property_osd_string(Mpv ctx, ZString name);
-// Wrapped, tested
 extern fn MpvError mpv_get_property_async(Mpv ctx, MpvUserdata reply_userdata, ZString name, MpvFormat format);
-// Wrapped, tested
 extern fn MpvError mpv_observe_property(Mpv mpv, MpvUserdata reply_userdata, ZString name, MpvFormat format);
-// Wrapped, tested
 extern fn MpvError mpv_unobserve_property(Mpv mpv, MpvUserdata registered_reply_userdata);
-// Wrapped, tested
 extern fn ZString mpv_event_name(MpvEventId event);
-// Wrapped
 extern fn MpvError mpv_event_to_node(MpvNode* dst, MpvEvent* src);
-// Wrapped
 extern fn MpvError mpv_request_event(Mpv ctx, MpvEventId event, MpvBool enable);
-// Wrapped, tested
 extern fn MpvError mpv_request_log_messages(Mpv ctx, ZString min_level);
-// Wrapped, tested
 extern fn MpvEvent* mpv_wait_event(Mpv ctx, double timeout);
-// Wrapped
 extern fn void mpv_wakeup(Mpv ctx);
-// Wrapped, tested
 extern fn void mpv_set_wakeup_callback(Mpv ctx, MpvCallback cb, void *d);
-// Wrapped
 extern fn void mpv_wait_async_requests(Mpv ctx);
-// Wrapped
 extern fn MpvError mpv_hook_add(Mpv ctx, MpvUserdata reply_userdata, ZString name, CInt priority);
-// Wrapped
 extern fn MpvError mpv_hook_continue(Mpv ctx, ulong id);
 
