@@ -1,1 +1,1 @@
-Welcome to the libmpv library.
+# libmpv bindings for C3
